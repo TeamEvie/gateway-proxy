@@ -257,10 +257,12 @@ pub async fn handle_client<S: 'static + AsyncRead + AsyncWrite + Unpin + Send>(
                 }
 
                 // Discord tokens may be prefixed by 'Bot ' in IDENTIFY
-                if identify.d.token.split_whitespace().last() != Some(&CONFIG.token) {
-                    warn!("[{addr}] Token from client mismatched, disconnecting");
-                    break;
-                }
+
+                // [EV-DOPS-NONTK-GW]
+                // if identify.d.token.split_whitespace().last() != Some(&CONFIG.token) {
+                //     warn!("[{addr}] Token from client mismatched, disconnecting");
+                //     break;
+                // }
 
                 trace!("[{addr}] Shard ID is {shard_id}");
 
@@ -304,10 +306,12 @@ pub async fn handle_client<S: 'static + AsyncRead + AsyncWrite + Unpin + Send>(
                 };
 
                 // Discord tokens may be prefixed by 'Bot ' in RESUME
-                if resume.d.token.split_whitespace().last() != Some(&CONFIG.token) {
-                    warn!("[{addr}] Token from client mismatched, disconnecting");
-                    break;
-                }
+                
+                // [EV-DOPS-NONTK-GW]
+                // if resume.d.token.split_whitespace().last() != Some(&CONFIG.token) {
+                //     warn!("[{addr}] Token from client mismatched, disconnecting");
+                //     break;
+                // }
 
                 // Find the shard that has the matching session ID
                 if let Some(session) = state.get_session(&resume.d.session_id) {
