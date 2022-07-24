@@ -90,7 +90,3 @@ Voice support, while being present for a while, has been removed entirely. This 
 In theory, the proxy is very fast for the reasons mentioned above. In practice, this shows. There is almost zero overhead in latency.
 
 Using 225 shards, with almost full caching (members, guilds, channels, roles, voice states) the proxy uses 11.7GB of memory and sits around 2% CPU usage over all 4c/8t of my machine. This again shows that the processing overhead is negligible, the only thing you can and should optimize on is the cache configuration.
-
-## Known Issues / TODOs
-
-- Re-add voice support
