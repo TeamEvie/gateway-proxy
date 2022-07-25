@@ -1,3 +1,5 @@
+⚠️ Archive Notice: We use [ClientPack](https://github.com/TeamEvie/ClientPack) now, our very own gateway proxy implementation.
+
 # gateway-proxy
 
 > This is a very hacky project, so it might stop working if Discord changes their API core. This is unlikely, but keep that in mind while using the proxy.
